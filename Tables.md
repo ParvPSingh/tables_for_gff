@@ -1,6 +1,6 @@
 # Tables
 
-## Table 1: MAE-M3GNET
+## Table 1: Joint Fine-tuning on Same Budget (Joint FT-SB) MAE for M3GNET
 
 <table>
 <thead>
@@ -21,7 +21,7 @@
 
 ---
 
-## Table 2: MAE-ORB
+## Table 2: Joint Fine-tuning on Same Budget (Joint FT-SB) MAE for ORB
 
 <table>
 <thead>
@@ -42,7 +42,7 @@
 
 ---
 
-## Table 3: Rollout EV/FV
+## Table 3: Rollout Energy Violation / Force Violation errors on M3GNET
 
 Rollout cumulative EV/FV comparison across domains on M3GNet. Values are averages over five forward simulations for 1000 time steps with different initial conditions; parentheses show the rollout standard deviation. Joint FT SB = Joint FT with same budget.
 
@@ -64,7 +64,7 @@ Rollout cumulative EV/FV comparison across domains on M3GNet. Values are average
 
 ---
 
-## Table 4: Rollout FV
+## Table 4: Rollout Force Violation Error on ORB
 
 Rollout cumulative FV comparison across domains on ORB. Values are averages over five forward simulations for 1000 time steps with different initial conditions when available. LiPS20 rows are omitted because rollout metrics are not present. Joint FT SB = Joint FT with same budget.
 
@@ -86,7 +86,7 @@ Rollout cumulative FV comparison across domains on ORB. Values are averages over
 
 ---
 
-## Table 5: Rollout JSD/WF
+## Table 5: Rollout Jensen-Shannon Divergence (JSD) / Wright’s Factor (WF)
 
 <table>
 <thead>
@@ -106,7 +106,7 @@ Rollout cumulative FV comparison across domains on ORB. Values are averages over
 
 ---
 
-## Table 6: RMSE (M3GNet)
+## Table 6: RMSE for M3GNet
 
 RMSE comparison across domains on M3GNet. MD17, rmd17, and MD22 are reported in kcal/mol/Angstrom and kcal/mol; LiPS20 is reported in eV/Angstrom and eV. Joint FT SB = Joint FT with same budget.
 
@@ -129,7 +129,7 @@ RMSE comparison across domains on M3GNet. MD17, rmd17, and MD22 are reported in 
 
 ---
 
-## Table 7: RMSE (ORB)
+## Table 7: RMSE for ORB
 
 Force RMSE comparison across domains on ORB. MD17, rmd17, and MD22 are reported in kcal/mol/Angstrom; LiPS20 is reported in eV/Angstrom. Joint FT SB = Joint FT with same budget.
 
@@ -152,7 +152,7 @@ Force RMSE comparison across domains on ORB. MD17, rmd17, and MD22 are reported 
 
 ---
 
-## Table 8: R2 (M3GNet)
+## Table 8: R2 for M3GNet
 
 R2 comparison across domains on M3GNet. Values are unitless. Joint FT SB = Joint FT with same budget.
 
@@ -175,7 +175,7 @@ R2 comparison across domains on M3GNet. Values are unitless. Joint FT SB = Joint
 
 ---
 
-## Table 9: R2 (ORB)
+## Table 9: R2 for ORB
 
 Force R2 comparison across domains on ORB. R2 is unitless; higher is better. Joint FT SB = Joint FT with same budget.
 
@@ -241,7 +241,7 @@ Computational efficiency analysis on ORB.
 
 ---
 
-## Table 12: Ablation (M3GNet)
+## Table 12: Unfreezing N blocks ablation (M3GNet)
 
 Unfreezing-layer ablation on M3GNet. Rows indicate the number of last blocks unfrozen during fine-tuning. Time is reported in seconds. For Ethanol + Malonaldehyde + Aspirin, Force MAE (F) and Energy MAE (E) are reported in kcal/mol/Angstrom and kcal/mol. For Li2S + Li3P, F and E are reported in eV/Angstrom and eV.
 
@@ -259,7 +259,7 @@ Unfreezing-layer ablation on M3GNet. Rows indicate the number of last blocks unf
 
 ---
 
-## Table 13: Ablation (ORB)
+## Table 13: Unfreezing N blocks (ORB)
 
 Unfreezing-layer ablation on ORB. Rows indicate the number of last stacks unfrozen during fine-tuning. Time is reported in seconds. For Ethanol + Malonaldehyde + Aspirin, Force MAE is reported in kcal/mol/Angstrom. For Li2S + Li3P, Force MAE is reported in eV/Angstrom.
 
@@ -278,7 +278,7 @@ Unfreezing-layer ablation on ORB. Rows indicate the number of last stacks unfroz
 
 ---
 
-## Table 14: M3GNet MAE (rMD17)
+## Table 14: rMD17 MAE (M3GNet)
 
 Force MAE (F) is reported in kcal/mol/Angstrom and Energy MAE (E) is reported in kcal/mol. 5-Task Mix (rmd17) corresponds to Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin.
 
@@ -295,7 +295,7 @@ Force MAE (F) is reported in kcal/mol/Angstrom and Energy MAE (E) is reported in
 
 ---
 
-## Table 15: M3GNet Efficiency (rMD17)
+## Table 15: rMD17 Efficiency (M3GNet)
 
 Comparison of total training time (seconds) between Joint FT and GFFMerge for rmd17 using M3GNet.
 
@@ -312,7 +312,7 @@ Comparison of total training time (seconds) between Joint FT and GFFMerge for rm
 
 ---
 
-## Table 16: ORB MAE (rMD17)
+## Table 16: rMD17 MAE (ORB)
 
 Force MAE is reported in kcal/mol/Angstrom.
 
@@ -329,7 +329,7 @@ Force MAE is reported in kcal/mol/Angstrom.
 
 ---
 
-## Table 17: ORB Efficiency (rMD17)
+## Table 17: rMD17 Efficiency (ORB)
 
 Computational efficiency analysis on ORB. Times are reported in seconds.
 
