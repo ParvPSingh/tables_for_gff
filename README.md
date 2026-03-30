@@ -1,1 +1,343 @@
-# tables_for_gff
+## Table 1: Joint Fine-tuning on Same Budget (Joint FT-SB) MAE for M3GNET
+
+<table>
+<thead>
+<tr><th>Scenario</th><th>GFFMerge F</th><th>GFFMerge E</th><th>Joint FT-SB F</th><th>Joint FT-SB E</th></tr>
+</thead>
+<tbody>
+<tr><td>Aspirin+Uracil</td><td><strong>0.94</strong></td><td><strong>0.03</strong></td><td>1.54</td><td>0.06</td></tr>
+<tr><td>Ethanol+Malonaldehyde+Aspirin</td><td><strong>0.90</strong></td><td><strong>0.04</strong></td><td>1.18</td><td>0.05</td></tr>
+<tr><td>5-TaskMix(Ethanol+Naphthalene+SalicylicAcid+Uracil+Aspirin)</td><td><strong>0.85</strong></td><td>0.03</td><td>0.97</td><td>0.03</td></tr>
+<tr><td>Aspirin+Uracil</td><td><strong>1.54</strong></td><td><strong>0.04</strong></td><td>4.24</td><td>0.43</td></tr>
+<tr><td>Ethanol+Malonaldehyde+Aspirin</td><td><strong>1.51</strong></td><td><strong>0.05</strong></td><td>3.06</td><td>0.14</td></tr>
+<tr><td>5-TaskMix(Ethanol+Naphthalene+SalicylicAcid+Uracil+Aspirin)</td><td><strong>1.58</strong></td><td><strong>0.06</strong></td><td>1.97</td><td>0.07</td></tr>
+<tr><td>Ac-Ala3-NHMe+AT-AT</td><td><strong>1.65</strong></td><td>0.05</td><td>2.02</td><td>0.05</td></tr>
+<tr><td>Ac-Ala3-NHMe+DHA+Stachyose</td><td><strong>1.82</strong></td><td><strong>0.05</strong></td><td>2.09</td><td>0.06</td></tr>
+<tr><td>Li2S+Li3P</td><td><strong>0.58</strong></td><td><strong>0.04</strong></td><td>0.74</td><td>0.30</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 2: Joint Fine-tuning on Same Budget (Joint FT-SB) MAE for ORB
+
+<table>
+<thead>
+<tr><th>Scenario</th><th>GFFMerge F</th><th>JointFT-SB F</th></tr>
+</thead>
+<tbody>
+<tr><td>Aspirin+Uracil</td><td><strong>1.175</strong></td><td>1.785</td></tr>
+<tr><td>Ethanol+Malonaldehyde+Aspirin</td><td><strong>1.564</strong></td><td>2.160</td></tr>
+<tr><td>5-TaskMix(Ethanol+Naphthalene+SalicylicAcid+Uracil+Aspirin)</td><td><strong>1.343</strong></td><td>1.508</td></tr>
+<tr><td>Aspirin+Uracil</td><td><strong>1.355</strong></td><td>1.907</td></tr>
+<tr><td>Ethanol+Malonaldehyde+Aspirin</td><td><strong>1.605</strong></td><td>2.092</td></tr>
+<tr><td>5-TaskMix(Ethanol+Naphthalene+SalicylicAcid+Uracil+Aspirin)</td><td><strong>1.363</strong></td><td>1.569</td></tr>
+<tr><td>Ac-Ala3-NHMe+AT-AT</td><td><strong>1.357</strong></td><td>1.892</td></tr>
+<tr><td>Ac-Ala3-NHMe+DHA+Stachyose</td><td><strong>1.529</strong></td><td>1.818</td></tr>
+<tr><td>Li2S+Li3P</td><td><strong>0.080</strong></td><td>0.097</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 3: Rollout Energy Violation / Force Violation errors on M3GNET
+
+Rollout cumulative EV/FV comparison across domains on M3GNet. Values are averages over five forward simulations for 1000 time steps with different initial conditions; parentheses show the rollout standard deviation. Joint FT SB = Joint FT with same budget.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging EV</th><th>Wt Averaging FV</th><th>Fisher EV</th><th>Fisher FV</th><th>TIES EV</th><th>TIES FV</th><th>EMR EV</th><th>EMR FV</th><th>GFFMerge EV</th><th>GFFMerge FV</th><th>Joint FT SB EV</th><th>Joint FT SB FV</th><th>Joint FT EV</th><th>Joint FT FV</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17</td><td>Aspirin + Uracil</td><td>1.62e-09 (1.71e-09)</td><td>0.543 (0.063)</td><td>8.75e-10 (8.39e-10)</td><td>0.561 (0.054)</td><td>2.04e-08 (7.93e-09)</td><td>0.707 (0.042)</td><td>3.45e-09 (3.56e-09)</td><td>0.653 (0.073)</td><td>8.67e-11 (4.22e-11)</td><td>0.509 (0.055)</td><td>8.76e-11 (3.43e-11)</td><td>0.573 (0.054)</td><td>8.76e-11 (4.41e-11)</td><td>0.496 (0.052)</td></tr>
+<tr><td>MD17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>1.18e-08 (4.97e-09)</td><td>0.680 (0.083)</td><td>1.64e-08 (7.65e-09)</td><td>0.673 (0.071)</td><td>1.24e-08 (6.57e-09)</td><td>0.671 (0.078)</td><td>2.34e-09 (2.25e-09)</td><td>0.729 (0.040)</td><td>2.85e-10 (2.99e-10)</td><td>0.594 (0.079)</td><td>2.63e-10 (2.57e-10)</td><td>0.615 (0.080)</td><td>2.71e-10 (2.83e-10)</td><td>0.562 (0.101)</td></tr>
+<tr><td>MD17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>1.33e-08 (1.31e-08)</td><td>0.652 (0.087)</td><td>1.41e-08 (1.27e-08)</td><td>0.653 (0.073)</td><td>1.59e-08 (1.12e-08)</td><td>0.663 (0.053)</td><td>2.91e-08 (2.85e-08)</td><td>0.759 (0.038)</td><td>2.12e-10 (2.43e-10)</td><td>0.562 (0.067)</td><td>2.05e-10 (2.23e-10)</td><td>0.557 (0.074)</td><td>2.12e-10 (2.36e-10)</td><td>0.527 (0.086)</td></tr>
+<tr><td>rmd17</td><td>Aspirin + Uracil</td><td>9.11e-06 (1.51e-06)</td><td>0.961 (0.034)</td><td>8.93e-06 (1.45e-06)</td><td>0.960 (0.033)</td><td>9.36e-06 (1.74e-06)</td><td>0.962 (0.032)</td><td>9.08e-06 (1.49e-06)</td><td>0.961 (0.033)</td><td>9.52e-06 (1.73e-06)</td><td>0.961 (0.032)</td><td>8.70e-06 (1.39e-06)</td><td>0.962 (0.032)</td><td>8.83e-06 (1.50e-06)</td><td>0.961 (0.032)</td></tr>
+<tr><td>rmd17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>2.03e-05 (1.39e-05)</td><td>0.995 (0.012)</td><td>2.01e-05 (1.37e-05)</td><td>0.995 (0.011)</td><td>1.96e-05 (1.34e-05)</td><td>0.995 (0.012)</td><td>1.95e-05 (1.33e-05)</td><td>0.995 (0.010)</td><td>2.37e-05 (1.58e-05)</td><td>0.994 (0.011)</td><td>1.99e-05 (1.34e-05)</td><td>0.994 (0.012)</td><td>2.11e-05 (1.41e-05)</td><td>0.993 (0.011)</td></tr>
+<tr><td>rmd17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.039 (0.190)</td><td>0.962 (0.032)</td><td>0.039 (0.191)</td><td>0.964 (0.030)</td><td>0.077 (0.227)</td><td>0.968 (0.030)</td><td>0.039 (0.192)</td><td>0.965 (0.031)</td><td>0.039 (0.190)</td><td>0.964 (0.029)</td><td>0.039 (0.190)</td><td>0.960 (0.033)</td><td>0.069 (0.237)</td><td>0.963 (0.031)</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + AT-AT</td><td>7.35e-09 (8.04e-10)</td><td>0.619 (0.031)</td><td>1.16e-08 (2.80e-09)</td><td>0.684 (0.034)</td><td>4.49e-08 (9.59e-09)</td><td>0.795 (0.017)</td><td>4.55e-09 (1.18e-09)</td><td>0.721 (0.027)</td><td>3.55e-11 (1.53e-11)</td><td>0.586 (0.043)</td><td>3.62e-11 (1.89e-11)</td><td>0.617 (0.039)</td><td>3.88e-11 (2.49e-11)</td><td>0.480 (0.053)</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>1.26e-08 (9.04e-09)</td><td>0.715 (0.028)</td><td>1.37e-08 (1.01e-08)</td><td>0.688 (0.040)</td><td>3.39e-09 (3.06e-09)</td><td>0.819 (0.023)</td><td>1.55e-07 (1.09e-07)</td><td>0.831 (0.018)</td><td>4.01e-11 (2.22e-11)</td><td>0.641 (0.044)</td><td>4.67e-11 (2.46e-11)</td><td>0.638 (0.051)</td><td>4.58e-11 (3.82e-11)</td><td>0.548 (0.057)</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 4: Rollout Force Violation Error on ORB
+
+Rollout cumulative FV comparison across domains on ORB. Values are averages over five forward simulations for 1000 time steps with different initial conditions when available. LiPS20 rows are omitted because rollout metrics are not present. Joint FT SB = Joint FT with same budget.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging</th><th>Fisher</th><th>TIES</th><th>EMR</th><th>GFFMerge</th><th>Joint FT SB</th><th>Joint FT</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17</td><td>Aspirin + Uracil</td><td>0.984</td><td>0.984</td><td>0.965</td><td>0.978</td><td>0.997</td><td>0.971</td><td>0.970</td></tr>
+<tr><td>MD17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.939</td><td>0.942</td><td>0.931</td><td>0.965</td><td>0.997</td><td>0.973</td><td>0.974</td></tr>
+<tr><td>MD17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.951</td><td>0.950</td><td>0.952</td><td>0.965</td><td>0.997</td><td>0.964</td><td>0.968</td></tr>
+<tr><td>rmd17</td><td>Aspirin + Uracil</td><td>0.994</td><td>0.993</td><td>0.981</td><td>0.996</td><td>0.999</td><td>0.984</td><td>0.994</td></tr>
+<tr><td>rmd17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.995</td><td>0.995</td><td>0.995</td><td>0.996</td><td>0.987</td><td>0.995</td><td>0.996</td></tr>
+<tr><td>rmd17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.987</td><td>0.984</td><td>0.979</td><td>0.991</td><td>0.990</td><td>0.989</td><td>0.989</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + AT-AT</td><td>0.979</td><td>0.979</td><td>0.964</td><td>0.984</td><td>0.999</td><td>0.978</td><td>0.984</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>0.982</td><td>0.979</td><td>0.975</td><td>0.983</td><td>0.999</td><td>0.983</td><td>0.985</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 5: Rollout Jensen-Shannon Divergence (JSD) / Wright’s Factor (WF)
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging JSD</th><th>Wt Averaging WF</th><th>Fisher JSD</th><th>Fisher WF</th><th>TIES JSD</th><th>TIES WF</th><th>EMR JSD</th><th>EMR WF</th><th>GFFMerge JSD</th><th>GFFMerge WF</th><th>Joint FT SB JSD</th><th>Joint FT SB WF</th><th>Joint FT JSD</th><th>Joint FT WF</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17</td><td>Aspirin + Uracil</td><td>0.0657</td><td>50.17</td><td>0.0615</td><td>49.19</td><td>0.0427</td><td>54.69</td><td>0.0797</td><td>48.95</td><td>0.0334</td><td>48.91</td><td>0.0507</td><td>44.50</td><td>0.0660</td><td>48.38</td></tr>
+<tr><td>MD17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.0706</td><td>56.89</td><td>0.0462</td><td>50.42</td><td>0.0569</td><td>54.23</td><td>0.0803</td><td>47.75</td><td>0.0496</td><td>69.74</td><td>0.0676</td><td>52.84</td><td>0.0598</td><td>50.16</td></tr>
+<tr><td>MD17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.0507</td><td>50.72</td><td>0.0741</td><td>53.96</td><td>0.0563</td><td>47.65</td><td>0.0591</td><td>43.19</td><td>0.0266</td><td>50.97</td><td>0.0653</td><td>47.36</td><td>0.0651</td><td>44.34</td></tr>
+<tr><td>rmd17</td><td>Aspirin + Uracil</td><td>0.1197</td><td>96.59</td><td>0.1197</td><td>96.58</td><td>0.1123</td><td>96.32</td><td>0.1202</td><td>96.62</td><td>0.0480</td><td>61.30</td><td>0.1055</td><td>95.92</td><td>0.1203</td><td>96.61</td></tr>
+<tr><td>rmd17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.1193</td><td>97.00</td><td>0.1193</td><td>97.00</td><td>0.1192</td><td>96.99</td><td>0.1195</td><td>97.01</td><td>0.0581</td><td>81.13</td><td>0.1194</td><td>97.01</td><td>0.1190</td><td>96.99</td></tr>
+<tr><td>rmd17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.1161</td><td>94.84</td><td>0.1143</td><td>94.78</td><td>0.1120</td><td>94.70</td><td>0.1172</td><td>94.90</td><td>0.0496</td><td>71.67</td><td>0.1174</td><td>94.91</td><td>0.1185</td><td>94.95</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + AT-AT</td><td>0.0208</td><td>41.67</td><td>0.0244</td><td>38.12</td><td>0.0260</td><td>50.19</td><td>0.0213</td><td>29.64</td><td>0.0217</td><td>38.93</td><td>0.0235</td><td>38.84</td><td>0.0211</td><td>37.12</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>0.0283</td><td>41.68</td><td>0.0306</td><td>40.40</td><td>0.0297</td><td>45.43</td><td>0.0246</td><td>33.67</td><td>0.0146</td><td>35.62</td><td>0.0281</td><td>38.12</td><td>0.0192</td><td>36.67</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 6: RMSE for M3GNet
+
+RMSE comparison across domains on M3GNet. MD17, rmd17, and MD22 are reported in kcal/mol/Angstrom and kcal/mol; LiPS20 is reported in eV/Angstrom and eV. Joint FT SB = Joint FT with same budget.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging F</th><th>Wt Averaging E</th><th>Fisher F</th><th>Fisher E</th><th>TIES F</th><th>TIES E</th><th>EMR F</th><th>EMR E</th><th>GFFMerge F</th><th>GFFMerge E</th><th>Joint FT SB F</th><th>Joint FT SB E</th><th>Joint FT F</th><th>Joint FT E</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17 (kcal/mol/Angstrom, kcal/mol)</td><td>Aspirin + Uracil</td><td>2.38</td><td>1.13</td><td>2.03</td><td>0.83</td><td>3.76</td><td>4.02</td><td>2.81</td><td>1.80</td><td>1.32</td><td>0.04</td><td>2.11</td><td>0.08</td><td>1.23</td><td>0.04</td></tr>
+<tr><td>MD17 (kcal/mol/Angstrom, kcal/mol)</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>3.63</td><td>2.44</td><td>3.39</td><td>2.90</td><td>5.13</td><td>2.60</td><td>3.42</td><td>1.21</td><td>1.22</td><td>0.05</td><td>1.67</td><td>0.07</td><td>1.07</td><td>0.04</td></tr>
+<tr><td>MD17 (kcal/mol/Angstrom, kcal/mol)</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>3.40</td><td>2.44</td><td>3.13</td><td>2.52</td><td>3.54</td><td>2.75</td><td>3.66</td><td>3.78</td><td>1.18</td><td>0.04</td><td>1.40</td><td>0.04</td><td>0.99</td><td>0.03</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom, kcal/mol)</td><td>Aspirin + Uracil</td><td>6.20</td><td>4.37</td><td>5.83</td><td>5.11</td><td>10.02</td><td>13.88</td><td>7.08</td><td>1.35</td><td>2.09</td><td>0.06</td><td>5.75</td><td>0.46</td><td>1.69</td><td>0.05</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom, kcal/mol)</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>7.60</td><td>10.61</td><td>8.00</td><td>10.55</td><td>11.61</td><td>12.15</td><td>9.41</td><td>2.37</td><td>2.05</td><td>0.07</td><td>4.16</td><td>0.17</td><td>1.41</td><td>0.05</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom, kcal/mol)</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>8.76</td><td>10.24</td><td>10.74</td><td>10.09</td><td>9.19</td><td>9.17</td><td>7.82</td><td>12.93</td><td>2.17</td><td>0.07</td><td>2.80</td><td>0.09</td><td>1.18</td><td>0.03</td></tr>
+<tr><td>MD22 (kcal/mol/Angstrom, kcal/mol)</td><td>Ac-Ala3-NHMe + AT-AT</td><td>4.13</td><td>1.97</td><td>4.65</td><td>2.51</td><td>7.47</td><td>5.03</td><td>4.80</td><td>1.67</td><td>2.32</td><td>0.06</td><td>2.85</td><td>0.07</td><td>1.84</td><td>0.04</td></tr>
+<tr><td>MD22 (kcal/mol/Angstrom, kcal/mol)</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>4.96</td><td>2.46</td><td>4.96</td><td>2.58</td><td>6.55</td><td>1.07</td><td>6.36</td><td>7.35</td><td>2.54</td><td>0.06</td><td>2.98</td><td>0.07</td><td>1.98</td><td>0.06</td></tr>
+<tr><td>LiPS20 (eV/Angstrom, eV)</td><td>Li2S + Li3P</td><td>11.78</td><td>62.31</td><td>68.47</td><td>53.50</td><td>5.15</td><td>191.56</td><td>78.78</td><td>37.29</td><td>0.77</td><td>0.05</td><td>1.05</td><td>0.39</td><td>0.45</td><td>0.09</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 7: RMSE for ORB
+
+Force RMSE comparison across domains on ORB. MD17, rmd17, and MD22 are reported in kcal/mol/Angstrom; LiPS20 is reported in eV/Angstrom. Joint FT SB = Joint FT with same budget.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging</th><th>Fisher</th><th>TIES</th><th>EMR</th><th>GFFMerge</th><th>Joint FT SB</th><th>Joint FT</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17 (kcal/mol/Angstrom)</td><td>Aspirin + Uracil</td><td>7.898</td><td>10.979</td><td>8.492</td><td>11.907</td><td>1.635</td><td>2.426</td><td>1.339</td></tr>
+<tr><td>MD17 (kcal/mol/Angstrom)</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>12.436</td><td>12.121</td><td>10.164</td><td>20.231</td><td>2.157</td><td>2.942</td><td>1.602</td></tr>
+<tr><td>MD17 (kcal/mol/Angstrom)</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>11.125</td><td>12.494</td><td>8.351</td><td>35.140</td><td>1.865</td><td>2.122</td><td>1.119</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom)</td><td>Aspirin + Uracil</td><td>7.978</td><td>12.448</td><td>8.620</td><td>15.647</td><td>1.855</td><td>2.573</td><td>1.408</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom)</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>13.983</td><td>12.173</td><td>11.006</td><td>18.915</td><td>2.193</td><td>2.884</td><td>1.717</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom)</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>11.681</td><td>12.654</td><td>8.059</td><td>35.670</td><td>1.892</td><td>2.217</td><td>1.191</td></tr>
+<tr><td>MD22 (kcal/mol/Angstrom)</td><td>Ac-Ala3-NHMe + AT-AT</td><td>7.509</td><td>8.626</td><td>8.594</td><td>11.106</td><td>1.848</td><td>2.560</td><td>1.653</td></tr>
+<tr><td>MD22 (kcal/mol/Angstrom)</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>8.105</td><td>10.375</td><td>8.164</td><td>25.475</td><td>2.120</td><td>2.506</td><td>1.503</td></tr>
+<tr><td>LiPS20 (eV/Angstrom)</td><td>Li2S + Li3P</td><td>0.425</td><td>0.444</td><td>0.438</td><td>0.431</td><td>0.133</td><td>0.188</td><td>0.151</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 8: R2 for M3GNet
+
+R2 comparison across domains on M3GNet. Values are unitless. Joint FT SB = Joint FT with same budget.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging F</th><th>Wt Averaging E</th><th>Fisher F</th><th>Fisher E</th><th>TIES F</th><th>TIES E</th><th>EMR F</th><th>EMR E</th><th>GFFMerge F</th><th>GFFMerge E</th><th>Joint FT SB F</th><th>Joint FT SB E</th><th>Joint FT F</th><th>Joint FT E</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17 (kcal/mol/Angstrom, kcal/mol)</td><td>Aspirin + Uracil</td><td>0.993</td><td>1.000</td><td>0.995</td><td>1.000</td><td>0.982</td><td>1.000</td><td>0.990</td><td>1.000</td><td>0.998</td><td>1.000</td><td>0.994</td><td>1.000</td><td>0.998</td><td>1.000</td></tr>
+<tr><td>MD17 (kcal/mol/Angstrom, kcal/mol)</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.981</td><td>1.000</td><td>0.984</td><td>1.000</td><td>0.963</td><td>1.000</td><td>0.983</td><td>1.000</td><td>0.997</td><td>1.000</td><td>0.996</td><td>1.000</td><td>0.998</td><td>1.000</td></tr>
+<tr><td>MD17 (kcal/mol/Angstrom, kcal/mol)</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.984</td><td>1.000</td><td>0.987</td><td>1.000</td><td>0.983</td><td>1.000</td><td>0.982</td><td>1.000</td><td>0.998</td><td>1.000</td><td>0.997</td><td>1.000</td><td>0.999</td><td>1.000</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom, kcal/mol)</td><td>Aspirin + Uracil</td><td>0.956</td><td>1.000</td><td>0.961</td><td>1.000</td><td>0.885</td><td>1.000</td><td>0.943</td><td>1.000</td><td>0.995</td><td>1.000</td><td>0.962</td><td>1.000</td><td>0.997</td><td>1.000</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom, kcal/mol)</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.927</td><td>1.000</td><td>0.919</td><td>1.000</td><td>0.829</td><td>1.000</td><td>0.888</td><td>1.000</td><td>0.994</td><td>1.000</td><td>0.978</td><td>1.000</td><td>0.997</td><td>1.000</td></tr>
+<tr><td>rmd17 (kcal/mol/Angstrom, kcal/mol)</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.909</td><td>1.000</td><td>0.863</td><td>1.000</td><td>0.900</td><td>1.000</td><td>0.928</td><td>1.000</td><td>0.994</td><td>1.000</td><td>0.991</td><td>1.000</td><td>0.998</td><td>1.000</td></tr>
+<tr><td>MD22 (kcal/mol/Angstrom, kcal/mol)</td><td>Ac-Ala3-NHMe + AT-AT</td><td>0.976</td><td>1.000</td><td>0.970</td><td>1.000</td><td>0.922</td><td>1.000</td><td>0.968</td><td>1.000</td><td>0.992</td><td>1.000</td><td>0.989</td><td>1.000</td><td>0.995</td><td>1.000</td></tr>
+<tr><td>MD22 (kcal/mol/Angstrom, kcal/mol)</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>0.962</td><td>1.000</td><td>0.962</td><td>1.000</td><td>0.934</td><td>1.000</td><td>0.938</td><td>1.000</td><td>0.990</td><td>1.000</td><td>0.986</td><td>1.000</td><td>0.994</td><td>1.000</td></tr>
+<tr><td>LiPS20 (eV/Angstrom, eV)</td><td>Li2S + Li3P</td><td>-216.749</td><td>-0.473</td><td>-7421.772</td><td>-0.024</td><td>-41.157</td><td>-11.280</td><td>-9756.767</td><td>0.421</td><td>0.103</td><td>1.000</td><td>-0.801</td><td>1.000</td><td>0.687</td><td>1.000</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 9: R2 for ORB
+
+Force R2 comparison across domains on ORB. R2 is unitless; higher is better. Joint FT SB = Joint FT with same budget.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging</th><th>Fisher</th><th>TIES</th><th>EMR</th><th>GFFMerge</th><th>Joint FT SB</th><th>Joint FT</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17</td><td>Aspirin + Uracil</td><td>0.923</td><td>0.851</td><td>0.911</td><td>0.824</td><td>0.997</td><td>0.993</td><td>0.998</td></tr>
+<tr><td>MD17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.800</td><td>0.810</td><td>0.867</td><td>0.472</td><td>0.994</td><td>0.989</td><td>0.997</td></tr>
+<tr><td>MD17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.847</td><td>0.807</td><td>0.914</td><td>-0.524</td><td>0.996</td><td>0.994</td><td>0.998</td></tr>
+<tr><td>rmd17</td><td>Aspirin + Uracil</td><td>0.932</td><td>0.835</td><td>0.921</td><td>0.740</td><td>0.996</td><td>0.993</td><td>0.998</td></tr>
+<tr><td>rmd17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.779</td><td>0.833</td><td>0.863</td><td>0.596</td><td>0.995</td><td>0.991</td><td>0.997</td></tr>
+<tr><td>rmd17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.851</td><td>0.825</td><td>0.929</td><td>-0.387</td><td>0.996</td><td>0.995</td><td>0.998</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + AT-AT</td><td>0.921</td><td>0.896</td><td>0.897</td><td>0.828</td><td>0.995</td><td>0.991</td><td>0.996</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>0.902</td><td>0.839</td><td>0.900</td><td>0.027</td><td>0.993</td><td>0.991</td><td>0.997</td></tr>
+<tr><td>LiPS20</td><td>Li2S + Li3P</td><td>0.722</td><td>0.697</td><td>0.706</td><td>0.716</td><td>0.973</td><td>0.946</td><td>0.965</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 10: Timing (M3GNet)
+
+Computational efficiency analysis on M3GNet.
+
+<table>
+<thead>
+<tr><th>Merging Scenario</th><th>Wt Averaging (s)</th><th>Fisher (s)</th><th>TIES (s)</th><th>EMR (s)</th><th>GFFMerge (s)</th><th>Joint FT (s)</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17: Aspirin + Uracil</td><td>36.87</td><td>77.53</td><td>37.04</td><td>45.41</td><td>45.00</td><td>723.82</td></tr>
+<tr><td>MD17: Ethanol + Malonaldehyde + Aspirin</td><td>62.73</td><td>111.11</td><td>62.93</td><td>71.59</td><td>71.17</td><td>784.15</td></tr>
+<tr><td>MD17: 5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>211.10</td><td>277.83</td><td>211.37</td><td>220.29</td><td>226.74</td><td>1665.18</td></tr>
+<tr><td>MD22: Ac-Ala3-NHMe + AT-AT</td><td>295.51</td><td>362.39</td><td>295.67</td><td>304.64</td><td>323.78</td><td>2397.11</td></tr>
+<tr><td>MD22: Ac-Ala3-NHMe + DHA + Stachyose</td><td>456.42</td><td>568.27</td><td>456.68</td><td>465.35</td><td>518.61</td><td>6412.42</td></tr>
+<tr><td>LiPS: Li2S + Li3P</td><td>609.07</td><td>678.57</td><td>609.28</td><td>618.10</td><td>658.13</td><td>3296.31</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 11: Timing (ORB)
+
+Computational efficiency analysis on ORB.
+
+<table>
+<thead>
+<tr><th>Merging Scenario</th><th>Wt Averaging (s)</th><th>Fisher (s)</th><th>TIES (s)</th><th>EMR (s)</th><th>GFFMerge (s)</th><th>Joint FT (s)</th></tr>
+</thead>
+<tbody>
+<tr><td>MD17: Aspirin + Uracil</td><td>146.89</td><td>207.10</td><td>284.38</td><td>194.18</td><td>154.21</td><td>1364.61</td></tr>
+<tr><td>MD17: Ethanol + Malonaldehyde + Aspirin</td><td>163.91</td><td>229.47</td><td>320.19</td><td>209.44</td><td>171.78</td><td>1354.46</td></tr>
+<tr><td>MD17: 5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>451.72</td><td>528.98</td><td>642.83</td><td>496.57</td><td>462.75</td><td>2893.44</td></tr>
+<tr><td>rmd17: Aspirin + Uracil</td><td>154.79</td><td>224.52</td><td>319.50</td><td>208.10</td><td>161.47</td><td>1468.70</td></tr>
+<tr><td>rmd17: Ethanol + Malonaldehyde + Aspirin</td><td>180.20</td><td>246.36</td><td>335.19</td><td>226.13</td><td>188.08</td><td>1396.37</td></tr>
+<tr><td>rmd17: 5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>444.09</td><td>528.47</td><td>644.88</td><td>491.15</td><td>455.13</td><td>2969.44</td></tr>
+<tr><td>MD22: Ac-Ala3-NHMe + AT-AT</td><td>550.10</td><td>621.48</td><td>697.59</td><td>595.42</td><td>563.17</td><td>3526.78</td></tr>
+<tr><td>MD22: Ac-Ala3-NHMe + DHA + Stachyose</td><td>855.88</td><td>952.79</td><td>1031.15</td><td>900.65</td><td>872.48</td><td>6902.25</td></tr>
+<tr><td>LiPS: Li2S + Li3P</td><td>739.18</td><td>824.75</td><td>892.44</td><td>786.08</td><td>755.97</td><td>4257.98</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 12: Unfreezing N blocks ablation (M3GNet)
+
+Unfreezing-layer ablation on M3GNet. Rows indicate the number of last blocks unfrozen during fine-tuning. Time is reported in seconds. For Ethanol + Malonaldehyde + Aspirin, Force MAE (F) and Energy MAE (E) are reported in kcal/mol/Angstrom and kcal/mol. For Li2S + Li3P, F and E are reported in eV/Angstrom and eV.
+
+<table>
+<thead>
+<tr><th>Unfrozen Last N Blocks</th><th>Ethanol + Malonaldehyde + Aspirin Time (s)</th><th>Ethanol + Malonaldehyde + Aspirin F</th><th>Ethanol + Malonaldehyde + Aspirin E</th><th>Li2S + Li3P Time (s)</th><th>Li2S + Li3P F</th><th>Li2S + Li3P E</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>59.19</td><td>1.165</td><td>0.047</td><td>581.86</td><td>0.964</td><td>0.296</td></tr>
+<tr><td>1</td><td>59.88</td><td>0.973</td><td>0.040</td><td>594.28</td><td>0.761</td><td>0.135</td></tr>
+<tr><td>2</td><td>60.32</td><td>0.921</td><td>0.039</td><td>596.52</td><td>0.632</td><td>0.074</td></tr>
+<tr><td>3</td><td>61.76</td><td>0.898</td><td>0.038</td><td>607.04</td><td>0.577</td><td>0.040</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 13: Unfreezing N blocks (ORB)
+
+Unfreezing-layer ablation on ORB. Rows indicate the number of last stacks unfrozen during fine-tuning. Time is reported in seconds. For Ethanol + Malonaldehyde + Aspirin, Force MAE is reported in kcal/mol/Angstrom. For Li2S + Li3P, Force MAE is reported in eV/Angstrom.
+
+<table>
+<thead>
+<tr><th>Unfrozen Last N Stacks</th><th>Ethanol + Malonaldehyde + Aspirin Time (s)</th><th>Ethanol + Malonaldehyde + Aspirin MAE</th><th>Li2S + Li3P Time (s)</th><th>Li2S + Li3P MAE</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>133.64</td><td>2.217</td><td>481.41</td><td>0.161</td></tr>
+<tr><td>1</td><td>144.73</td><td>1.666</td><td>553.49</td><td>0.090</td></tr>
+<tr><td>2</td><td>157.53</td><td>1.676</td><td>653.07</td><td>0.083</td></tr>
+<tr><td>3</td><td>171.78</td><td>1.564</td><td>755.97</td><td>0.080</td></tr>
+<tr><td>4</td><td>185.91</td><td>1.533</td><td>856.94</td><td>0.078</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 14: rMD17 MAE (M3GNet)
+
+Force MAE (F) is reported in kcal/mol/Angstrom and Energy MAE (E) is reported in kcal/mol. 5-Task Mix (rmd17) corresponds to Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Wt Averaging F</th><th>Wt Averaging E</th><th>Fisher F</th><th>Fisher E</th><th>TIES F</th><th>TIES E</th><th>EMR F</th><th>EMR E</th><th>GFFMerge F</th><th>GFFMerge E</th><th>Joint FT F</th><th>Joint FT E</th></tr>
+</thead>
+<tbody>
+<tr><td>rmd17: Aspirin + Uracil</td><td>4.39</td><td>4.35</td><td>4.14</td><td>5.10</td><td>7.42</td><td>13.85</td><td>4.95</td><td>1.13</td><td>1.54</td><td>0.04</td><td>1.22</td><td>0.03</td></tr>
+<tr><td>rmd17: Ethanol + Malonaldehyde + Aspirin</td><td>5.58</td><td>10.16</td><td>5.82</td><td>10.20</td><td>9.00</td><td>11.79</td><td>6.54</td><td>2.26</td><td>1.51</td><td>0.05</td><td>1.00</td><td>0.04</td></tr>
+<tr><td>rmd17: 5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>5.89</td><td>9.72</td><td>7.07</td><td>9.83</td><td>6.95</td><td>8.63</td><td>5.61</td><td>9.66</td><td>1.58</td><td>0.06</td><td>0.83</td><td>0.03</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 15: rMD17 Efficiency (M3GNet)
+
+Comparison of total training time (seconds) between Joint FT and GFFMerge for rmd17 using M3GNet.
+
+<table>
+<thead>
+<tr><th>Merging Scenario</th><th>Joint FT (s)</th><th>GFFMerge (s)</th><th>Speedup</th></tr>
+</thead>
+<tbody>
+<tr><td>rmd17: Aspirin + Uracil</td><td>732.08</td><td>44.66</td><td>16.39x</td></tr>
+<tr><td>rmd17: Ethanol + Malonaldehyde + Aspirin</td><td>821.09</td><td>79.41</td><td>10.34x</td></tr>
+<tr><td>rmd17: 5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>1650.15</td><td>216.55</td><td>7.62x</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 16: rMD17 MAE (ORB)
+
+Force MAE is reported in kcal/mol/Angstrom.
+
+<table>
+<thead>
+<tr><th>Dataset</th><th>Wt Averaging</th><th>Fisher</th><th>TIES</th><th>EMR</th><th>GFFMerge</th><th>Joint FT</th></tr>
+</thead>
+<tbody>
+<tr><td>rmd17: Aspirin + Uracil</td><td>5.919</td><td>8.821</td><td>6.347</td><td>11.553</td><td>1.355</td><td>1.013</td></tr>
+<tr><td>rmd17: Ethanol + Malonaldehyde + Aspirin</td><td>9.680</td><td>8.598</td><td>7.662</td><td>13.626</td><td>1.605</td><td>1.243</td></tr>
+<tr><td>rmd17: 5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>7.820</td><td>8.668</td><td>5.889</td><td>26.992</td><td>1.363</td><td>0.846</td></tr>
+</tbody>
+</table>
+
+---
+
+## Table 17: rMD17 Efficiency (ORB)
+
+Computational efficiency analysis on ORB. Times are reported in seconds.
+
+<table>
+<thead>
+<tr><th>Merging Scenario</th><th>GFFMerge (s)</th><th>Joint FT (s)</th><th>Speedup</th></tr>
+</thead>
+<tbody>
+<tr><td>rmd17: Aspirin + Uracil</td><td>161.47</td><td>1468.70</td><td>9.10x</td></tr>
+<tr><td>rmd17: Ethanol + Malonaldehyde + Aspirin</td><td>188.08</td><td>1396.37</td><td>7.42x</td></tr>
+<tr><td>rmd17: 5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>455.13</td><td>2969.44</td><td>6.52x</td></tr>
+</tbody>
+</table>
