@@ -82,7 +82,7 @@
 
 <hr>
 
-<h2>Table 4: Rollout JSD/WF for M3GNet</h2>
+<h2>Table : Rollout JSD/WF for M3GNet</h2>
 <p class="caption">Rollout RDF JSD/WF comparison across domains on M3GNet. Values are averages over five forward simulations for 1000 time steps with different initial conditions. Lower JSD and higher WF are better. Joint FT SB = Joint FT with same budget.</p>
 
 <div class="table-wrapper">
@@ -112,7 +112,7 @@
 </table>
 </div>
 
-<h2>Table 5: Rollout Force Violation Error on ORB</h2>
+<h2>Table 4: Rollout Force Violation Error on ORB</h2>
 <p class="caption">Rollout cumulative FV comparison across domains on ORB. Values are averages over five forward simulations for 1000 time steps with different initial conditions when available. LiPS20 rows are omitted because rollout metrics are not present. Joint FT SB = Joint FT with same budget.</p>
 <div class="table-wrapper">
 <table>
@@ -134,8 +134,39 @@
 
 <hr>
 
-<h2>Table 6: Rollout Jensen-Shannon Divergence (JSD) / Wright&#39;s Factor (WF) for ORB</h2>
+<h2>Table 5: Rollout Jensen-Shannon Divergence (JSD) / Wright&#39;s Factor (WF)</h2>
+  <p class="caption">Rollout RDF JSD/WF comparison across domains on M3GNet and ORB. Values are averages over five forward simulations for 1000 time steps with different initial conditions. Lower JSD and higher WF are better. Joint FT SB = Joint FT with same budget.</p>
+
 <div class="table-wrapper">
+  <h3>Table 5a  for M3GNet</h3>
+<table>
+<thead>
+<tr>
+  <th>Dataset</th><th>Scenario</th>
+  <th>Wt Averaging JSD</th><th>Wt Averaging WF</th>
+  <th>Fisher JSD</th><th>Fisher WF</th>
+  <th>TIES JSD</th><th>TIES WF</th>
+  <th>EMR JSD</th><th>EMR WF</th>
+  <th>GFFMerge JSD</th><th>GFFMerge WF</th>
+  <th>Joint FT SB JSD</th><th>Joint FT SB WF</th>
+  <th>Joint FT JSD</th><th>Joint FT WF</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>MD17</td><td>Aspirin + Uracil</td><td>0.0041</td><td>10.67</td><td>0.0046</td><td>10.96</td><td>0.0059</td><td>13.46</td><td>0.0040</td><td>10.88</td><td>0.0042</td><td>10.71</td><td>0.0042</td><td>10.79</td><td>0.0040</td><td>9.85</td></tr>
+<tr><td>MD17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.0094</td><td>18.20</td><td>0.0105</td><td>18.18</td><td>0.0111</td><td>19.30</td><td>0.0102</td><td>19.92</td><td>0.0090</td><td>15.91</td><td>0.0093</td><td>17.22</td><td>0.0101</td><td>18.62</td></tr>
+<tr><td>MD17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.0069</td><td>13.74</td><td>0.0060</td><td>12.59</td><td>0.0086</td><td>16.72</td><td>0.0081</td><td>15.27</td><td>0.0066</td><td>13.29</td><td>0.0064</td><td>12.95</td><td>0.0072</td><td>13.38</td></tr>
+<tr><td>rmd17</td><td>Aspirin + Uracil</td><td>0.0931</td><td>95.42</td><td>0.0930</td><td>95.42</td><td>0.0932</td><td>95.44</td><td>0.0933</td><td>95.43</td><td>0.0943</td><td>95.43</td><td>0.0935</td><td>95.43</td><td>0.0932</td><td>95.43</td></tr>
+<tr><td>rmd17</td><td>Ethanol + Malonaldehyde + Aspirin</td><td>0.1194</td><td>96.97</td><td>0.1194</td><td>96.98</td><td>0.1194</td><td>96.97</td><td>0.1195</td><td>96.98</td><td>0.1195</td><td>96.97</td><td>0.1194</td><td>96.98</td><td>0.1195</td><td>96.98</td></tr>
+<tr><td>rmd17</td><td>5-Task Mix (Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin)</td><td>0.0977</td><td>93.94</td><td>0.0972</td><td>93.90</td><td>0.0954</td><td>92.34</td><td>0.0975</td><td>93.93</td><td>0.0944</td><td>93.61</td><td>0.0959</td><td>93.76</td><td>0.0993</td><td>92.89</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + AT-AT</td><td>0.0033</td><td>6.73</td><td>0.0023</td><td>7.11</td><td>0.0037</td><td>12.12</td><td>0.0043</td><td>7.07</td><td>0.0023</td><td>5.48</td><td>0.0020</td><td>5.58</td><td>0.0013</td><td>5.41</td></tr>
+<tr><td>MD22</td><td>Ac-Ala3-NHMe + DHA + Stachyose</td><td>0.0010</td><td>5.47</td><td>0.0011</td><td>5.70</td><td>0.0014</td><td>6.67</td><td>0.0016</td><td>7.77</td><td>0.0007</td><td>3.67</td><td>0.0012</td><td>4.67</td><td>0.0006</td><td>3.75</td></tr>
+</tbody>
+</table>
+</div>
+  
+<div class="table-wrapper">
+  <h3>Table 5b for ORB</h3>
 <table>
 <thead>
 <tr><th>Dataset</th><th>Scenario</th><th>Wt Averaging JSD</th><th>Wt Averaging WF</th><th>Fisher JSD</th><th>Fisher WF</th><th>TIES JSD</th><th>TIES WF</th><th>EMR JSD</th><th>EMR WF</th><th>GFFMerge JSD</th><th>GFFMerge WF</th><th>Joint FT SB JSD</th><th>Joint FT SB WF</th><th>Joint FT JSD</th><th>Joint FT WF</th></tr>
@@ -155,7 +186,7 @@
 
 <hr>
 
-<h2>Table 7: RMSE for M3GNet</h2>
+<h2>Table 6: RMSE for M3GNet</h2>
 <p class="caption">RMSE comparison across domains on M3GNet. MD17, rmd17, and MD22 are reported in kcal/mol/Angstrom and kcal/mol; LiPS20 is reported in eV/Angstrom and eV. Joint FT SB = Joint FT with same budget.</p>
 <div class="table-wrapper">
 <table>
@@ -178,7 +209,7 @@
 
 <hr>
 
-<h2>Table 8: RMSE for ORB</h2>
+<h2>Table 7: RMSE for ORB</h2>
 <p class="caption">Force RMSE comparison across domains on ORB. MD17, rmd17, and MD22 are reported in kcal/mol/Angstrom; LiPS20 is reported in eV/Angstrom. Joint FT SB = Joint FT with same budget.</p>
 <div class="table-wrapper">
 <table>
@@ -201,7 +232,7 @@
 
 <hr>
 
-<h2>Table 9: R2 for M3GNet</h2>
+<h2>Table 8: R2 for M3GNet</h2>
 <p class="caption">R2 comparison across domains on M3GNet. Values are unitless. Joint FT SB = Joint FT with same budget.</p>
 <div class="table-wrapper">
 <table>
@@ -224,7 +255,7 @@
 
 <hr>
 
-<h2>Table 10: R2 for ORB</h2>
+<h2>Table 9: R2 for ORB</h2>
 <p class="caption">Force R2 comparison across domains on ORB. R2 is unitless; higher is better. Joint FT SB = Joint FT with same budget.</p>
 <div class="table-wrapper">
 <table>
@@ -247,7 +278,7 @@
 
 <hr>
 
-<h2>Table 11: Timing (M3GNet)</h2>
+<h2>Table 10: Timing (M3GNet)</h2>
 <p class="caption">Computational efficiency analysis on M3GNet.</p>
 <div class="table-wrapper">
 <table>
@@ -267,7 +298,7 @@
 
 <hr>
 
-<h2>Table 12: Timing (ORB)</h2>
+<h2>Table 11: Timing (ORB)</h2>
 <p class="caption">Computational efficiency analysis on ORB.</p>
 <div class="table-wrapper">
 <table>
@@ -290,7 +321,7 @@
 
 <hr>
 
-<h2>Table 13: Unfreezing N blocks ablation (M3GNet)</h2>
+<h2>Table 12: Unfreezing N blocks ablation (M3GNet)</h2>
 <p class="caption">Unfreezing-layer ablation on M3GNet. Rows indicate the number of last blocks unfrozen during fine-tuning. Time is reported in seconds. For Ethanol + Malonaldehyde + Aspirin, Force MAE (F) and Energy MAE (E) are reported in kcal/mol/Angstrom and kcal/mol. For Li2S + Li3P, F and E are reported in eV/Angstrom and eV.</p>
 <div class="table-wrapper">
 <table>
@@ -308,7 +339,7 @@
 
 <hr>
 
-<h2>Table 14: Unfreezing N blocks (ORB)</h2>
+<h2>Table 13: Unfreezing N blocks (ORB)</h2>
 <p class="caption">Unfreezing-layer ablation on ORB. Rows indicate the number of last stacks unfrozen during fine-tuning. Time is reported in seconds. For Ethanol + Malonaldehyde + Aspirin, Force MAE is reported in kcal/mol/Angstrom. For Li2S + Li3P, Force MAE is reported in eV/Angstrom.</p>
 <div class="table-wrapper">
 <table>
@@ -327,7 +358,7 @@
 
 <hr>
 
-<h2>Table 15: rMD17 MAE (M3GNet)</h2>
+<h2>Table 14: rMD17 MAE (M3GNet)</h2>
 <p class="caption">Force MAE (F) is reported in kcal/mol/Angstrom and Energy MAE (E) is reported in kcal/mol. 5-Task Mix (rmd17) corresponds to Ethanol + Naphthalene + Salicylic Acid + Uracil + Aspirin.</p>
 <div class="table-wrapper">
 <table>
@@ -344,7 +375,7 @@
 
 <hr>
 
-<h2>Table 16: rMD17 Efficiency (M3GNet)</h2>
+<h2>Table 15: rMD17 Efficiency (M3GNet)</h2>
 <p class="caption">Comparison of total training time (seconds) between Joint FT and GFFMerge for rmd17 using M3GNet.</p>
 <div class="table-wrapper">
 <table>
@@ -361,7 +392,7 @@
 
 <hr>
 
-<h2>Table 17: rMD17 MAE (ORB)</h2>
+<h2>Table 16: rMD17 MAE (ORB)</h2>
 <p class="caption">Force MAE is reported in kcal/mol/Angstrom.</p>
 <div class="table-wrapper">
 <table>
@@ -378,7 +409,7 @@
 
 <hr>
 
-<h2>Table 18: rMD17 Efficiency (ORB)</h2>
+<h2>Table 17: rMD17 Efficiency (ORB)</h2>
 <p class="caption">Computational efficiency analysis on ORB. Times are reported in seconds.</p>
 <div class="table-wrapper">
 <table>
